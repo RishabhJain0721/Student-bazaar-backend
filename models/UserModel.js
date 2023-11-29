@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   isVerified: Boolean,
   verificationToken: String,
+  phone: Number,
   createdAt: {
     type: Date,
     default: Date.now, 

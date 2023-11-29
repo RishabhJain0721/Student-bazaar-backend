@@ -1,5 +1,5 @@
 import User from "../models/UserModel.js";
-// import ItemToSell from "../models/SellModel.js";
+import ItemToSell from "../models/SellModel.js";
 
 const ProfileDetails = async (req, res) => {
   try {

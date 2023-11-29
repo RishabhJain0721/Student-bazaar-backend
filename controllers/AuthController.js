@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const signup = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, phone, password } = req.body;
   console.log(req.body);
 
   // Check if the email is valid
@@ -62,6 +62,7 @@ const signup = async (req, res) => {
   const newUser = new User({
     name,
     email,
+    phone,
     password,
     isVerified: false,
     verificationToken,
