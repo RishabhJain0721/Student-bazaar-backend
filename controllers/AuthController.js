@@ -73,7 +73,7 @@ const signup = async (req, res) => {
     console.log("Saved new user : ", newUser)
 
     // Send a verification email to the user as the admin
-    const verificationLink= `https://student-bazaar.vercel.app/verification?token=${verificationToken}`
+    const verificationLink= `https://student-bazaar.vercel.app/verify-email?token=${verificationToken}`
 
     await transporter.sendMail({
       from: "rishujain0721@gmail.com",
