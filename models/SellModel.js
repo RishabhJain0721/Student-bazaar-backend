@@ -6,6 +6,7 @@ const sellingSchema = new mongoose.Schema({
   itemName: String,
   itemCost: Number,
   itemDescription: String,
+  category: String,
   contactNumber: Number,
   pickupLocation: String,
   images:  [Object],

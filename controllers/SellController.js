@@ -25,6 +25,7 @@ const sellItem = async (req, res) => {
         itemName,
         itemCost,
         itemDescription,
+        category,
         contactNumber,
         pickupLocation,
       } = req.body;
@@ -35,6 +36,7 @@ const sellItem = async (req, res) => {
       console.log("itemName:", itemName);
       console.log("itemCost:", itemCost);
       console.log("itemDescription:", itemDescription);
+      console.log("category:", category);
       console.log("contactNumber:", contactNumber);
       console.log("pickupLocation:", pickupLocation);
       console.log("images:", images);
@@ -46,6 +48,7 @@ const sellItem = async (req, res) => {
           itemName,
           itemCost,
           itemDescription,
+          category,
           contactNumber,
           pickupLocation,
           images,
