@@ -74,6 +74,8 @@ const signup = async (req, res) => {
 
     // Send a verification email to the user as the admin
     const verificationLink= `https://student-bazaar.vercel.app/verify-email?token=${verificationToken}`
+    // const verificationLink= `http://localhost:5173/verify-email?token=${verificationToken}`
+
 
     await transporter.sendMail({
       from: "rishujain0721@gmail.com",
@@ -131,7 +133,7 @@ const login = async (req, res) => {
 
 const verifyEmail = async (req, res) => {
   const { token } = req.query;
-  console.log(token);
+  console.log("This is verification token : ",token);
 
   try {
     // Verify the token and find the user
