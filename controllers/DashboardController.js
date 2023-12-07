@@ -8,6 +8,7 @@ const dashboardListItems = async (req, res) => {
           itemName: 1,
           itemCost: 1,
           userName: 1,
+          category: 1,
           image: { $arrayElemAt: ["$images", 0] }
         }
       }
