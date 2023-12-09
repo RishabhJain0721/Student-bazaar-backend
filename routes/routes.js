@@ -1,6 +1,6 @@
 import express from "express";
 import { signup, login, verifyEmail } from "../controllers/AuthController.js";
-import { sellItem } from "../controllers/SellController.js";
+import { sellItem,updateItem } from "../controllers/SellController.js";
 import { dashboardListItems } from "../controllers/DashboardController.js";
 import { ItemDetailsController } from "../controllers/ItemDetailsController.js";
 import { ProfileDetails, ItemsListedByUser  } from "../controllers/ProfileController.js";
@@ -20,6 +20,7 @@ router.get("/api/dashboard", dashboardListItems);
 router.post("/api/itemDetails", ItemDetailsController);
 router.post("/api/profile", ProfileDetails);
 router.post("/api/listedItemsByUser", ItemsListedByUser);
+router.post("/api/updateItem", updateItem);
 router.post("/api/deleteItem", DeleteItem);
 router.post("/api/takeOrder", TakeOrder);
 router.get("/api/showOrders", ShowOrders);
