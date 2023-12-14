@@ -23,7 +23,7 @@ router.post("/api/auth/signup", signup);
 router.post("/api/auth/login", login);
 router.get("/verify-email", verifyEmail);
 router.post("/api/sell", sellItem);
-router.get("/api/dashboard", dashboardListItems);
+router.post("/api/dashboard", dashboardListItems);
 router.post("/api/itemDetails", ItemDetailsController);
 router.post("/api/profile", ProfileDetails);
 router.post("/api/listedItemsByUser", ItemsListedByUser);

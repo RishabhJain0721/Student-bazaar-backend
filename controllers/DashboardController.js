@@ -1,21 +1,20 @@
 import ItemToSell from "../models/SellModel.js";
 
 const dashboardListItems = async (req, res) => {
+  // Retrieve the category from the request
+  const category = req.body.category;
+
+  console.log("Hello guys category is : ", category);
+
   // Retrieve the limit parameter from the query string, default to 5 if not provided
   const limit = parseInt(req.query.limit) || 8;
 
   // Retrieve the cursor parameter from the query string
   const page = req.query.page;
-  console.log(page)
-
-  // Build the query based on the cursor
-  // const query = cursor ? { _id: { $gt: ObjectId(cursor) } } : {};
-
-  // Use the limit method to restrict the number of documents returned
-  // const limitedListings = await collection.find(query).limit(limit).toArray();
-  // const result = await collection.find({}).skip(skipCount).limit(limitCount).toArray();
+  console.log(page);
+  
   try {
-    const items = await ItemToSell.aggregate([
+    let aggregationPipeline = [
       {
         $project: {
           itemName: 1,
@@ -25,7 +24,20 @@ const dashboardListItems = async (req, res) => {
           image: { $arrayElemAt: ["$images", 0] },
         },
       },
-    ]).skip((page-1)*8).limit(limit);
+    ];
+
+    if (category !== "" && category !== null && category !== undefined) {
+      aggregationPipeline.unshift({
+        $match: {
+          category: category,
+        },
+      });
+    }
+
+    const items = await ItemToSell.aggregate(aggregationPipeline)
+      .skip((page - 1) * 8)
+      .limit(limit);
+
     return res.status(200).send(items);
   } catch (error) {
     console.error("Error:", error);
@@ -36,8 +48,8 @@ const dashboardListItems = async (req, res) => {
 const totalNumberOfItems = async (req, res) => {
   try {
     const count = await ItemToSell.countDocuments();
-    console.log(count)
-    return res.status(200).send({count});
+    console.log(count);
+    return res.status(200).send({ count });
   } catch (error) {
     console.error("Error:", error);
     return res.status(500).send("Internal server error");
