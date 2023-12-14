@@ -1,9 +1,15 @@
 import express from "express";
 import { signup, login, verifyEmail } from "../controllers/AuthController.js";
-import { sellItem,updateItem } from "../controllers/SellController.js";
-import { dashboardListItems } from "../controllers/DashboardController.js";
+import { sellItem, updateItem } from "../controllers/SellController.js";
+import {
+  dashboardListItems,
+  totalNumberOfItems,
+} from "../controllers/DashboardController.js";
 import { ItemDetailsController } from "../controllers/ItemDetailsController.js";
-import { ProfileDetails, ItemsListedByUser  } from "../controllers/ProfileController.js";
+import {
+  ProfileDetails,
+  ItemsListedByUser,
+} from "../controllers/ProfileController.js";
 import { DeleteItem } from "../controllers/DeleteItemController.js";
 import { TakeOrder } from "../controllers/TakeOrderController.js";
 import { ShowOrders } from "../controllers/ShowOrdersController.js";
@@ -12,6 +18,7 @@ import { DeleteOrder } from "../controllers/DeleteOrderController.js";
 
 const router = express.Router();
 
+router.get("/api/count", totalNumberOfItems);
 router.post("/api/auth/signup", signup);
 router.post("/api/auth/login", login);
 router.get("/verify-email", verifyEmail);
