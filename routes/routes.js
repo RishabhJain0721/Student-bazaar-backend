@@ -12,6 +12,7 @@ import {
 } from "../controllers/ProfileController.js";
 import { DeleteItem } from "../controllers/DeleteItemController.js";
 import { TakeOrder } from "../controllers/TakeOrderController.js";
+import { searchItem } from "../controllers/SearchController.js";
 import { ShowOrders } from "../controllers/ShowOrdersController.js";
 import { ShowMyOrders } from "../controllers/ShowOrdersController.js";
 import { DeleteOrder } from "../controllers/DeleteOrderController.js";
@@ -23,6 +24,7 @@ router.post("/api/auth/signup", signup);
 router.post("/api/auth/login", login);
 router.get("/verify-email", verifyEmail);
 router.post("/api/sell", sellItem);
+router.post("/api/search", searchItem);
 router.post("/api/dashboard", dashboardListItems);
 router.post("/api/itemDetails", ItemDetailsController);
 router.post("/api/profile", ProfileDetails);
