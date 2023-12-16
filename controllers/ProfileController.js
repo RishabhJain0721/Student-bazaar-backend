@@ -13,14 +13,9 @@ const ProfileDetails = async (req, res) => {
   }
 };
 
-const ItemsListedByUser = async (req, res) => {
+const ItemsListedByAdmin = async (req, res) => {
   try {
     const items = await ItemToSell.aggregate([
-      {
-        $match: {
-          userToken : req.body.token
-        }
-      },
       {
         $project: {
           itemName: 1,
@@ -38,4 +33,4 @@ const ItemsListedByUser = async (req, res) => {
   
 };
 
-export { ProfileDetails, ItemsListedByUser };
+export { ProfileDetails, ItemsListedByAdmin };

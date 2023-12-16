@@ -8,7 +8,7 @@ import {
 import { ItemDetailsController } from "../controllers/ItemDetailsController.js";
 import {
   ProfileDetails,
-  ItemsListedByUser,
+  ItemsListedByAdmin,
 } from "../controllers/ProfileController.js";
 import { DeleteItem } from "../controllers/DeleteItemController.js";
 import { TakeOrder } from "../controllers/TakeOrderController.js";
@@ -28,7 +28,7 @@ router.post("/api/search", searchItem);
 router.post("/api/dashboard", dashboardListItems);
 router.post("/api/itemDetails", ItemDetailsController);
 router.post("/api/profile", ProfileDetails);
-router.post("/api/listedItemsByUser", ItemsListedByUser);
+router.get("/api/itemsListedByAdmin", ItemsListedByAdmin);
 router.post("/api/updateItem", updateItem);
 router.post("/api/deleteItem", DeleteItem);
 router.post("/api/takeOrder", TakeOrder);
