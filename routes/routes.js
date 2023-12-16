@@ -6,10 +6,8 @@ import {
   totalNumberOfItems,
 } from "../controllers/DashboardController.js";
 import { ItemDetailsController } from "../controllers/ItemDetailsController.js";
-import {
-  ProfileDetails,
-  ItemsListedByAdmin,
-} from "../controllers/ProfileController.js";
+import { ProfileDetails } from "../controllers/ProfileController.js";
+import { ItemsListedByAdmin } from "../controllers/AdminListingsController.js";
 import { DeleteItem } from "../controllers/DeleteItemController.js";
 import { TakeOrder } from "../controllers/TakeOrderController.js";
 import { searchItem } from "../controllers/SearchController.js";
