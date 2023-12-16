@@ -12,7 +12,6 @@ const ItemsListedByAdmin = async (req, res) => {
           },
         },
       ]);
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173/profile');
       return res.status(200).send(items);
     } catch (error) {
       console.error("Error:", error);
