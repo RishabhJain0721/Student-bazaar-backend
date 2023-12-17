@@ -25,6 +25,19 @@ import ItemToSell from "../models/SellModel.js";
 
 const ItemsListedByAdmin =async (req,res) =>{
   console.log("Inside ItemsListedByAdmin");
+
+  const items = await ItemToSell.aggregate([
+    {
+      $project: {
+        itemName: 1,
+        itemCost: 1,
+        userName: 1,
+        image: { $arrayElemAt: ["$images", 0] },
+      },
+    },
+  ]);
+  console.log("These are the items",items);
+  
   res.status(200).send("Inside ItemsListedByAdmin");
 }
 
