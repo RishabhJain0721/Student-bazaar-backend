@@ -14,10 +14,10 @@ const dashboardListItems = async (req, res) => {
   // Retrieve the cursor parameter from the query string
   page = req.query.page;
   console.log(page);
-  if (req.body.rendering == "admin") {
-    limit = 8;
-    page = 1;
-  }
+  // if (req.body.rendering == "admin") {
+  //   limit = 8;
+  //   page = 1;
+  // }
 
   try {
     let aggregationPipeline = [
