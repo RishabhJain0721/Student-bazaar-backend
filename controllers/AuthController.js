@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const signup = async (req, res) => {
-  const { name, email, phone, password } = req.body;
+  const { name, email, phone, address, password } = req.body;
   console.log(req.body);
 
   // Check if the email is valid
@@ -63,6 +63,7 @@ const signup = async (req, res) => {
     name,
     email,
     phone,
+    address,
     password,
     isVerified: false,
     verificationToken,
@@ -78,7 +79,7 @@ const signup = async (req, res) => {
 
 
     await transporter.sendMail({
-      from: "rishujain0721@gmail.com",
+      from: "studentbazaar19@gmail.com",
       to: email,
       subject: "Verify your email",
       text: `Click the following link to verify your email: ${verificationLink}`,

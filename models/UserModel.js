@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
   isVerified: Boolean,
   verificationToken: String,
   phone: Number,
+  address: String,
   createdAt: {
     type: Date,
     default: Date.now, 
