@@ -12,6 +12,7 @@ const ShowOrders = async (req, res) => {
         $project: {
           clientName: 1,
           clientNumber: 1,
+          clientAddress: 1,
           itemName: 1,
           itemCost: 1,
           userName: 1,

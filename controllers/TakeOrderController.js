@@ -27,6 +27,7 @@ const TakeOrder = async (req, res) => {
 
     const clientName = client.name;
     const clientNumber = client.phone;
+    const clientAddress = client.address;
 
     // console.log("This is userToken", userToken);
     // console.log("This is userName", userName);
@@ -43,6 +44,7 @@ const TakeOrder = async (req, res) => {
     const order = new OrderDetails({
       clientName,
       clientNumber,
+      clientAddress,
       clientToken,
       userToken,
       userName,
