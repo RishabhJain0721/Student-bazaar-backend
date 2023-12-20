@@ -14,6 +14,7 @@ import { searchItem } from "../controllers/SearchController.js";
 import { ShowOrders } from "../controllers/ShowOrdersController.js";
 import { ShowMyOrders } from "../controllers/ShowOrdersController.js";
 import { DeleteOrder } from "../controllers/DeleteOrderController.js";
+import { EditProfile } from "../controllers/EditProfileController.js";
 
 const router = express.Router();
 
@@ -33,5 +34,6 @@ router.post("/api/takeOrder", TakeOrder);
 router.get("/api/showOrders", ShowOrders);
 router.post("/api/showMyOrders", ShowMyOrders);
 router.post("/api/deleteOrder", DeleteOrder);
+router.post("/api/editProfile", EditProfile);
 
 export default router;
