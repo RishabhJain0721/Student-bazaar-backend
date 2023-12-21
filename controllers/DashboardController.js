@@ -30,6 +30,11 @@ const dashboardListItems = async (req, res) => {
           image: { $arrayElemAt: ["$images", 0] },
         },
       },
+      {
+        $sort: {
+          _id: -1 // Sort in descending order based on _id field (assuming it represents creation time)
+        }
+      }
     ];
 
     if (category !== "" && category !== null && category !== undefined) {
